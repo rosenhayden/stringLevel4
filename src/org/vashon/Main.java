@@ -15,10 +15,11 @@ public class Main {
     StringBuilder rev = new StringBuilder(word);
         //takes rev and reverses it and prints it
     System.out.println("Your word reversed is, " + rev.reverse().toString());
-
+	//finds number of characters in 'word'
     long totalChar = word.chars().filter(ch -> ch != ' ').count();
+    	//if the character count is greater than 8 print fun little easter egg
     if (totalChar > 8) {
-        System.out.println("Wow! That's a big word. A total of " + totalChar + " characters!");
+    System.out.println("Wow! That's a big word. A total of " + totalChar + " characters!");
     }
     }
 }
