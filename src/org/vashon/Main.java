@@ -6,20 +6,30 @@ public class Main {
 
     public static void main(String[] args) {
         //creates scanner
-	Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         //asks for word
-    System.out.println("Enter a single word to get it reversed.");
+        System.out.println("Enter a single word to get it reversed.");
         //creates string called word with next line
-    String word = scan.nextLine();
+        String word = scan.nextLine();
         //creates a new stringbuilder called rev
-    StringBuilder rev = new StringBuilder(word);
-        //takes rev and reverses it and prints it
-    System.out.println("Your word reversed is, " + rev.reverse().toString());
-	//finds number of characters in 'word'
-    long totalChar = word.chars().filter(ch -> ch != ' ').count();
-    	//if the character count is greater than 8 print fun little easter egg
-    if (totalChar > 8) {
-    System.out.println("Wow! That's a big word. A total of " + totalChar + " characters!");
+        StringBuilder rev = new StringBuilder(word);
+        //reverses word
+        rev.reverse();
+        //takes reversed words and makes it a string
+        String paliCheck = rev.toString();
+        //prints reversed word
+        System.out.println("Your word reversed is, " + rev);
+
+        //if character count is greater than 8 prints message
+        long totalChar = word.chars().filter(ch -> ch != ' ').count();
+            if (totalChar > 8) {
+            System.out.println("Wow! That's a big word. A total of " + totalChar + " characters!");
+            }
+
+            //checks is starting word is equal to reversed word
+            if (word.equals(paliCheck)) {
+            System.out.println("You dummy that word is the same backwards!");
+            }
+
+        }
     }
-    }
-}
